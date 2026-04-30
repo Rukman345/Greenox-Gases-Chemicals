@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greenox Gases and Chemicals</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Sora:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    html, body { height: 100%; margin: 0; }
+    * { font-family: 'DM Sans', sans-serif; }
+    .font-heading { font-family: 'Sora', sans-serif; }
+    .hero-section {
+      background-image: linear-gradient(to right, rgba(0,0,0,0.75), rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1400&h=900&fit=crop');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    .gas-particle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(30, 144, 255, 0.08);
+      animation: float 8s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0) scale(1); opacity: 0.3; }
+      50% { transform: translateY(-30px) scale(1.1); opacity: 0.6; }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up { animation: fadeUp 0.8s ease forwards; opacity: 0; }
+    .fade-up-d1 { animation-delay: 0.1s; }
+    .fade-up-d2 { animation-delay: 0.3s; }
+    .fade-up-d3 { animation-delay: 0.5s; }
+    .fade-up-d4 { animation-delay: 0.7s; }
+    .card-hover { transition: transform 0.3s, box-shadow 0.3s; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(74, 222, 128, 0.15); }
+    .nav-blur { backdrop-filter: blur(12px); background: rgba(255, 255, 255, 0.95); }
+  </style>
+  <style>body { box-sizing: border-box; }
+
+    
+/* Default desktop logo style (already correct) */
+.logo-img{
+    width: 180px;
+    height:70px;
+    display: block;
+}
+
+/* Mobile View Adjustment */
+@media screen and (max-width: 750px) {
+    .logo-img{
+        width: 130px;      /* smaller logo for mobile */
+        max-width: 100%;
+        height: 100px;
+        margin: 0 auto;   /* center logo */
+        display: block;
+    }
+
+    .logo-img{
+        text-align: center;
+        padding: 10px 0;
+    }
+}
+
+  </style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full overflow-auto bg-white">
+  <!-- Navigation -->
+  <nav class="nav-blur fixed top-0 left-0 w-full z-50 border-b border-blue-200 h-16 md:h-20">
+   <div class="max-w-7xl mx-auto px-4 md:px-6 h-full flex items-center justify-between">
+    <div class="flex items-center gap-3">
+     <div class="flex items-center gap-2">
+      <img class="logo-img" src="images/logo header (1).png" alt="Greenox Logo" loading="lazy" style="height: 80px; width: auto;" onerror="console.error('Logo failed to load:', this.src); this.style.background='#1e90ff'; this.alt='Greenox Logo';"><span class="font-heading font-bold text-blue-950 text-lg md:text-xl"></span>
+     </div>
+    </div>
+    <div class="hidden lg:flex items-center gap-4 xl:gap-8">
+     <a href="#home" class="text-blue-600 text-xs xl:text-sm font-medium hover:text-blue-800 transition">Home</a> <a href="#about" class="text-blue-600 text-xs xl:text-sm font-medium hover:text-blue-800 transition">About Us</a> <a href="#industries" class="text-blue-600 text-xs xl:text-sm font-medium hover:text-blue-800 transition">Industries</a> <a href="#products" class="text-blue-600 text-xs xl:text-sm font-medium hover:text-blue-800 transition">Products</a> <a href="#media" class="text-blue-600 text-xs xl:text-sm font-medium hover:text-blue-800 transition">Media &amp; Downloads</a> <a href="#contact" class="text-blue-600 text-xs xl:text-sm font-medium hover:text-blue-800 transition">Contact Us</a>
+    </div>
+    <div class="hidden lg:flex items-center gap-2 xl:gap-4 text-xs xl:text-sm text-gray-600"><a href="tel:+971506768820" class="hover:text-blue-600 transition">+971 50 676 8820</a> <a href="mailto:info@greenoxgases.com" class="hover:text-blue-600 transition hidden xl:block">info@greenoxgases.com</a>
+    </div><button id="mobile-menu-btn" class="flex lg:hidden p-2 rounded-lg hover:bg-blue-100 transition text-blue-900">
+     <svg id="menu-icon" class="w-6 h-6" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6" /> <line x1="3" y1="12" x2="21" y2="12" /> <line x1="3" y1="18" x2="21" y2="18" />
+     </svg></button>
+   </div>
+  </nav><!-- Mobile Sidebar Menu -->
+  
+  <div id="mobile-menu-overlay" class="fixed inset-0 z-30 bg-black/50 hidden lg:hidden" onclick="closeMobileMenu()"></div>
+  <div id="mobile-menu" class="fixed top-0 left-0 w-64 h-full z-40 bg-gradient-to-b from-blue-950 to-blue-900 transform -translate-x-full transition-transform duration-300 ease-in-out lg:hidden shadow-2xl">
+   <div class="p-6 border-b border-blue-800 flex items-center justify-between">
+    <span class="font-heading font-bold text-white text-lg">Menu</span> <button onclick="closeMobileMenu()" class="text-white hover:text-blue-200 transition p-2">
+     <svg width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18" /> <line x1="6" y1="6" x2="18" y2="18" />
+     </svg></button>
+   </div>
+   <div class="p-6 space-y-2">
+    <a href="#home" class="block text-white text-base font-medium hover:bg-blue-800 px-4 py-3 rounded-lg transition" onclick="closeMobileMenu()">Home</a> <a href="#about" class="block text-white text-base font-medium hover:bg-blue-800 px-4 py-3 rounded-lg transition" onclick="closeMobileMenu()">About Us</a> <a href="#industries" class="block text-white text-base font-medium hover:bg-blue-800 px-4 py-3 rounded-lg transition" onclick="closeMobileMenu()">Industries</a> <a href="#products" class="block text-white text-base font-medium hover:bg-blue-800 px-4 py-3 rounded-lg transition" onclick="closeMobileMenu()">Products</a> <a href="#media" class="block text-white text-base font-medium hover:bg-blue-800 px-4 py-3 rounded-lg transition" onclick="closeMobileMenu()">Media &amp; Downloads</a> <a href="#contact" class="block text-white text-base font-medium hover:bg-blue-800 px-4 py-3 rounded-lg transition" onclick="closeMobileMenu()">Contact Us</a>
+   </div>
+   <div class="px-6 py-8 border-t border-blue-800 space-y-3">
+    <p class="text-blue-200 text-xs font-semibold uppercase">Contact Info</p>
+    <div class="space-y-2 text-white text-sm">
+     <div class="flex items-center gap-2">
+      <i data-lucide="phone" style="width:16px;height:16px;"></i> <span>+971 50 676 8820</span>
+     </div>
+     <div class="flex items-center gap-2">
+      <i data-lucide="mail" style="width:16px;height:16px;"></i> <span>info@greenoxgases.com</span>
+     </div>
+    </div>
+   </div>
+  </div><!-- Main Content -->
+  <main class="pt-16 md:pt-20">
+   <!-- Hero Section -->
+   <section id="home" class="w-full pb-0 overflow-hidden relative" style="background-image: linear-gradient(135deg, rgba(30, 144, 255, 0.15), rgba(15, 23, 42, 0.25)), url('images/Untitled\ design\ \(1\).png'); background-size: cover; background-position: center; background-attachment: fixed; min-height: 400px; md:min-height: 500px;">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-24 lg:py-32 relative z-10 h-full flex items-center justify-center">
+     <div class="flex flex-col justify-center z-10 w-full text-center">
+      <h1 id="hero-title" class="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-4 md:mb-6">Industrial Gas Supplier in UAE, India &amp; GCC</h1>
+      <p id="hero-subtitle" class="text-gray-100 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed mb-6 md:mb-8">Reliable supply of oxygen, nitrogen, helium, and specialty gases.</p>
+      <div class="flex flex-wrap gap-3 md:gap-4 justify-center">
+       <a href="#contact" id="cta-btn" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 md:px-7 py-2.5 md:py-3.5 rounded-lg transition-all duration-200 text-sm md:text-base hover:shadow-lg hover:scale-105"> <span id="cta-text">Get a Quote</span> <i data-lucide="arrow-right" style="width:16px;height:16px;"></i> </a> <a href="#contact" id="secondary-btn" class="inline-flex items-center gap-2 border border-blue-300 hover:border-blue-500 text-white font-medium px-5 md:px-7 py-2.5 md:py-3.5 rounded-lg transition-all duration-200 text-sm md:text-base hover:shadow-lg hover:scale-105 hover:bg-blue-950/20"> <span id="secondary-text">Contact Us</span> </a>
+      </div>
+     </div>
+    </div><!-- Key Features Section -->
+    <section class="w-full bg-white py-20">
+     <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+       <div class="text-center">
+        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-4">
+         <i data-lucide="lightbulb" style="width:24px;height:24px;color:#1e90ff;"></i>
+        </div>
+        <h3 class="font-heading font-semibold text-blue-950 text-lg mb-2">Innovation</h3>
+        <p class="text-gray-600 text-sm">Cutting-edge technology and continuous R&amp;D</p>
+       </div>
+       <div class="text-center">
+        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-4">
+         <i data-lucide="leaf" style="width:24px;height:24px;color:#1e90ff;"></i>
+        </div>
+        <h3 class="font-heading font-semibold text-blue-950 text-lg mb-2">Sustainability</h3>
+        <p class="text-gray-600 text-sm">Eco-friendly solutions and green practices</p>
+       </div>
+       <div class="text-center">
+        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-4">
+         <i data-lucide="shield-check" style="width:24px;height:24px;color:#1e90ff;"></i>
+        </div>
+        <h3 class="font-heading font-semibold text-blue-950 text-lg mb-2">Reliability</h3>
+        <p class="text-gray-600 text-sm">Consistent delivery and 24/7 support</p>
+       </div>
+       <div class="text-center">
+        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-4">
+         <i data-lucide="award" style="width:24px;height:24px;color:#1e90ff;"></i>
+        </div>
+        <h3 class="font-heading font-semibold text-blue-950 text-lg mb-2">Excellence</h3>
+        <p class="text-gray-600 text-sm">Premium quality and certified standards</p>
+       </div>
+      </div>
+     </div>
+    </section><!-- Products Section with Images -->
+    <section id="products" class="w-full py-20" style="background-color: white;">
+     <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+       <p class="text-blue-600 text-sm font-semibold tracking-widest uppercase mb-3">Our Key Products</p>
+       <h2 class="font-heading text-4xl md:text-5xl font-bold text-blue-950 mb-4">Comprehensive Gas Solutions</h2>
+       <p class="text-gray-600 text-lg">Premium industrial gases and equipment for every application</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"><!-- Packaged Gases -->
+       <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow"><img src="images/packaged gases img.png" alt="Packaged gas cylinders" loading="lazy" class="w-full h-40 md:h-48 lg:h-64 object-cover" onerror="console.error('Image failed to load:', this.src); this.style.background='#ffffff'; this.alt='Packaged gases';">
+        <div class="p-4 md:p-6">
+         <h3 class="font-heading text-lg md:text-xl font-bold text-blue-900 mb-2">Packaged Gases</h3>
+         <p class="text-blue-600 text-xs md:text-sm font-semibold uppercase mb-2 md:mb-3">Portable Solutions</p>
+         <p class="text-gray-700 text-sm">High-quality bottled and cylinder gases for portable and industrial applications.</p>
+        </div>
+       </div><!-- Bulk Gases -->
+       <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow"><img src="images/bulk gases img.png" alt="Bulk gas storage tanks" loading="lazy" class="w-full h-64 object-cover" onerror="console.error('Image failed to load:', this.src); this.style.background='#ffffff'; this.alt='Bulk gases';">
+        <div class="p-6">
+         <h3 class="font-heading text-xl font-bold text-blue-900 mb-2">Bulk Gases</h3>
+         <p class="text-blue-600 text-sm font-semibold uppercase mb-3">Large-Scale Supply</p>
+         <p class="text-gray-700">Continuous production and supply for large-scale industrial processes.</p>
+        </div>
+       </div><!-- Specialty Gases -->
+       <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow"><img src="images/spec gases img.png" alt="Specialty gas mixtures" loading="lazy" class="w-full h-64 object-cover" onerror="console.error('Image failed to load:', this.src); this.style.background='#ffffff'; this.alt='Specialty gases';">
+        <div class="p-6">
+         <h3 class="font-heading text-xl font-bold text-blue-900 mb-2">Specialty Gases</h3>
+         <p class="text-blue-600 text-sm font-semibold uppercase mb-3">Custom Solutions</p>
+         <p class="text-gray-700">Custom gas mixtures tailored for specialized industrial applications.</p>
+        </div>
+       </div><!-- ASU -->
+       <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow"><img src="images/ASU img.png" alt="Air separation unit" loading="lazy" class="w-full h-64 object-cover" onerror="console.error('Image failed to load:', this.src); this.style.background='#ffffff'; this.alt='ASU';">
+        <div class="p-6">
+         <h3 class="font-heading text-xl font-bold text-blue-900 mb-2">ASU</h3>
+         <p class="text-blue-600 text-sm font-semibold uppercase mb-3">On-Site Generation</p>
+         <p class="text-gray-700">Advanced Air Separation Units for oxygen and nitrogen production.</p>
+        </div>
+       </div><!-- OECS -->
+       <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow"><img src="images/OECS img.png" alt="Oxygen enriched combustion system" loading="lazy" class="w-full h-64 object-cover" onerror="console.error('Image failed to load:', this.src); this.style.background='#ffffff'; this.alt='OECS';">
+        <div class="p-6">
+         <h3 class="font-heading text-xl font-bold text-blue-900 mb-2">OECS</h3>
+         <p class="text-blue-600 text-sm font-semibold uppercase mb-3">Industrial Efficiency</p>
+         <p class="text-gray-700">Oxygen Enriched Combustion Systems for enhanced efficiency.</p>
+        </div>
+       </div><!-- Gas Liquefaction -->
+       <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow"><img src="images/GAS liquifaction img.png" alt="Cryogenic liquefaction plant" loading="lazy" class="w-full h-64 object-cover" onerror="console.error('Image failed to load:', this.src); this.style.background='#ffffff'; this.alt='Gas liquefaction';">
+        <div class="p-6">
+         <h3 class="font-heading text-xl font-bold text-blue-900 mb-2">Gas Liquefaction</h3>
+         <p class="text-blue-600 text-sm font-semibold uppercase mb-3">Cryogenic Technology</p>
+         <p class="text-gray-700">Advanced cryogenic systems for liquid gas storage and transport.</p>
+        </div>
+       </div><!-- CCUS Technology -->
+       <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow"><img src="images/CCUS img .png" alt="Carbon capture utilization storage" loading="lazy" class="w-full h-64 object-cover" onerror="console.error('Image failed to load:', this.src); this.style.background='#ffffff'; this.alt='CCUS';">
+        <div class="p-6">
+         <h3 class="font-heading text-xl font-bold text-blue-900 mb-2">CCUS Technology</h3>
+         <p class="text-blue-600 text-sm font-semibold uppercase mb-3">Sustainable Solutions</p>
+         <p class="text-gray-700">Carbon Capture, Utilization &amp; Storage for sustainable industry.</p>
+        </div>
+       </div><!-- On-Site Gas Generation -->
+       <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow"><img src="images/onsite gen img .png" alt="On-site gas generation facility" loading="lazy" class="w-full h-64 object-cover" onerror="console.error('Image failed to load:', this.src); this.style.background='#ffffff'; this.alt='On-site generation';">
+        <div class="p-6">
+         <h3 class="font-heading text-xl font-bold text-blue-900 mb-2">On-Site Gas Generation</h3>
+         <p class="text-blue-600 text-sm font-semibold uppercase mb-3">Cost Reduction</p>
+         <p class="text-gray-700">In-house gas production systems for reduced operational costs.</p>
+        </div>
+       </div><!-- Gas Equipment -->
+       <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow"><img src="images/equipment .png" alt="Gas regulators and equipment" loading="lazy" class="w-full h-64 object-cover" onerror="console.error('Image failed to load:', this.src); this.style.background='#ffffff'; this.alt='Gas equipment';">
+        <div class="p-6">
+         <h3 class="font-heading text-xl font-bold text-blue-900 mb-2">Gas Equipment</h3>
+         <p class="text-blue-600 text-sm font-semibold uppercase mb-3">Safety &amp; Control</p>
+         <p class="text-gray-700">Premium regulators, valves, and safety equipment for all applications.</p>
+        </div>
+       </div><!-- H2 Plants -->
+       <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow"><img src="images/H2 plant img .png" alt="Hydrogen production plant" loading="lazy" class="w-full h-64 object-cover" onerror="console.error('Image failed to load:', this.src); this.style.background='#ffffff'; this.alt='H2 plants';">
+        <div class="p-6">
+         <h3 class="font-heading text-xl font-bold text-blue-900 mb-2">H₂ Plants</h3>
+         <p class="text-blue-600 text-sm font-semibold uppercase mb-3">Hydrogen Production</p>
+         <p class="text-gray-700">Complete hydrogen systems for fuel production and chemical applications.</p>
+        </div>
+       </div><!-- Gas & Plant Management Solutions -->
+       <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow"><img src="images/gas plant mngmnt.png" alt="Plant management and monitoring" loading="lazy" class="w-full h-64 object-cover" onerror="console.error('Image failed to load:', this.src); this.style.background='#ffffff'; this.alt='Management solutions';">
+        <div class="p-6">
+         <h3 class="font-heading text-xl font-bold text-blue-900 mb-2">Gas &amp; Plant Management</h3>
+         <p class="text-blue-600 text-sm font-semibold uppercase mb-3">Smart Operations</p>
+         <p class="text-gray-700">Real-time monitoring and optimization for efficient plant operations.</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section><!-- Testimonials Section -->
+    <section id="testimonials" class="w-full py-20 bg-gradient-to-b from-blue-50 to-white">
+     <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+       <p class="text-blue-600 text-sm font-semibold tracking-widest uppercase mb-3">What Our Partners Say</p>
+       <h2 class="font-heading text-4xl md:text-5xl font-bold text-blue-950 mb-4">Trusted by Industry Leaders</h2>
+       <p class="text-gray-600 text-lg">Proven reliability and excellence recognized by our global partners</p>
+      </div>
+      <div class="testimonials-grid grid grid-cols-1 md:grid-cols-2 gap-8 max-h-96 overflow-y-auto pr-4">
+       <style>
+        .testimonials-grid::-webkit-scrollbar { width: 6px; }
+        .testimonials-grid::-webkit-scrollbar-track { background: #f0f0f0; border-radius: 3px; }
+        .testimonials-grid::-webkit-scrollbar-thumb { background: #1e90ff; border-radius: 3px; }
+        .testimonials-grid { scrollbar-color: #1e90ff #f0f0f0; }
+       </style><!-- Testimonial 1 -->
+       <div class="bg-white rounded-xl p-6 md:p-8 shadow-md hover:shadow-lg transition-shadow">
+        <div class="flex items-center gap-1 mb-4"><i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i> <i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i> <i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i> <i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i> <i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i>
+        </div>
+        <p class="text-gray-700 mb-4 text-sm leading-relaxed">"As our technology and sustainability partner, Greenox has consistently provided innovative and reliable gas solutions. Their professionalism and commitment to excellence are outstanding."</p>
+        <p class="font-heading font-semibold text-blue-900">Teamwin</p>
+        <p class="text-blue-600 text-sm">Managing Director</p>
+       </div><!-- Testimonial 2 -->
+       <div class="flex-shrink-0 w-96 bg-white rounded-xl p-6 md:p-8 shadow-md hover:shadow-lg transition-shadow">
+        <div class="flex items-center gap-1 mb-4"><i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i> <i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i> <i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i> <i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i> <i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i>
+        </div>
+        <p class="text-gray-700 mb-4 text-sm leading-relaxed">"Greenox delivers both quality and consistency. Their team is proactive, well-informed, and easy to work with."</p>
+        <p class="font-heading font-semibold text-blue-900">Unigas</p>
+        <p class="text-blue-600 text-sm">Operations Manager</p>
+       </div><!-- Testimonial 3 -->
+       <div class="flex-shrink-0 w-96 bg-white rounded-xl p-6 md:p-8 shadow-md hover:shadow-lg transition-shadow">
+        <div class="flex items-center gap-1 mb-4"><i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i> <i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i> <i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i> <i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i> <i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i>
+        </div>
+        <p class="text-gray-700 mb-4 text-sm leading-relaxed">"Our partnership with Greenox has strengthened our market position. Their global reach and strong technical backing make them a trusted partner."</p>
+        <p class="font-heading font-semibold text-blue-900">DIGC</p>
+        <p class="text-blue-600 text-sm">Sales Director</p>
+       </div><!-- Testimonial 4 -->
+       <div class="flex-shrink-0 w-96 bg-white rounded-xl p-6 md:p-8 shadow-md hover:shadow-lg transition-shadow">
+        <div class="flex items-center gap-1 mb-4"><i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i> <i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i> <i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i> <i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i> <i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i>
+        </div>
+        <p class="text-gray-700 mb-4 text-sm leading-relaxed">"Greenox has proven to be a dependable partner with excellent product quality and responsive service. We look forward to expanding our cooperation further."</p>
+        <p class="font-heading font-semibold text-blue-900">Al Hosni</p>
+        <p class="text-blue-600 text-sm">Managing Partner</p>
+       </div><!-- Testimonial 5 -->
+       <div class="flex-shrink-0 w-96 bg-white rounded-xl p-6 md:p-8 shadow-md hover:shadow-lg transition-shadow">
+        <div class="flex items-center gap-1 mb-4"><i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i> <i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i> <i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i> <i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i> <i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i>
+        </div>
+        <p class="text-gray-700 mb-4 text-sm leading-relaxed">"Greenox has been a reliable and transparent partner in our gas sourcing operations. Their commitment to quality and timely deliveries has made a real difference in our business."</p>
+        <p class="font-heading font-semibold text-blue-900">Boubyan Gases</p>
+        <p class="text-blue-600 text-sm">Managing Director</p>
+       </div><!-- Testimonial 6 -->
+       <div class="flex-shrink-0 w-96 bg-white rounded-xl p-6 md:p-8 shadow-md hover:shadow-lg transition-shadow">
+        <div class="flex items-center gap-1 mb-4"><i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i> <i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i> <i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i> <i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i> <i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i>
+        </div>
+        <p class="text-gray-700 mb-4 text-sm leading-relaxed">"Working with Greenox is always smooth and professional. Their team understands our needs and ensures every order is handled efficiently and on time."</p>
+        <p class="font-heading font-semibold text-blue-900">Smart Gas</p>
+        <p class="text-blue-600 text-sm">Sales Manager</p>
+       </div><!-- Testimonial 7 -->
+       <div class="flex-shrink-0 w-96 bg-white rounded-xl p-6 md:p-8 shadow-md hover:shadow-lg transition-shadow">
+        <div class="flex items-center gap-1 mb-4"><i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i> <i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i> <i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i> <i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i> <i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i>
+        </div>
+        <p class="text-gray-700 mb-4 text-sm leading-relaxed">"The Greenox team brings great market knowledge and professionalism. Their approach to sustainable gas solutions aligns perfectly with our goals."</p>
+        <p class="font-heading font-semibold text-blue-900">Prime Gases</p>
+        <p class="text-blue-600 text-sm">General Manager</p>
+       </div><!-- Testimonial 8 -->
+       <div class="flex-shrink-0 w-96 bg-white rounded-xl p-6 md:p-8 shadow-md hover:shadow-lg transition-shadow">
+        <div class="flex items-center gap-1 mb-4"><i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i> <i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i> <i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i> <i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i> <i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i>
+        </div>
+        <p class="text-gray-700 mb-4 text-sm leading-relaxed">"We appreciate Greenox for their reliability and honesty in every transaction. Their transparent communication and support are commendable."</p>
+        <p class="font-heading font-semibold text-blue-900">Premier Carbonics</p>
+        <p class="text-blue-600 text-sm">Procurement Manager</p>
+       </div><!-- Testimonial 9 -->
+       <div class="flex-shrink-0 w-96 bg-white rounded-xl p-6 md:p-8 shadow-md hover:shadow-lg transition-shadow">
+        <div class="flex items-center gap-1 mb-4"><i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i> <i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i> <i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i> <i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i> <i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i>
+        </div>
+        <p class="text-gray-700 mb-4 text-sm leading-relaxed">"We truly value our collaboration with Greenox. Their technical expertise and customer support set them apart in the industry."</p>
+        <p class="font-heading font-semibold text-blue-900">Amogh Gases</p>
+        <p class="text-blue-600 text-sm">Director</p>
+       </div><!-- Testimonial 10 -->
+       <div class="flex-shrink-0 w-96 bg-white rounded-xl p-6 md:p-8 shadow-md hover:shadow-lg transition-shadow">
+        <div class="flex items-center gap-1 mb-4"><i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i> <i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i> <i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i> <i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i> <i data-lucide="star" style="width:18px;height:18px;color:#fbbf24;fill:#fbbf24;"></i>
+        </div>
+        <p class="text-gray-700 mb-4 text-sm leading-relaxed">"Greenox has been consistent in providing high-quality products and dependable service. Their quick response and flexibility make them a preferred supplier."</p>
+        <p class="font-heading font-semibold text-blue-900">Sri Vinayaka</p>
+        <p class="text-blue-600 text-sm">Operations Head</p>
+       </div>
+      </div>
+     </div>
+    </section><!-- Footer -->
+    <footer class="w-full bg-blue-950 border-t border-blue-900/30 py-16">
+     <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-12 mb-12"><!-- Get in Touch -->
+       <div>
+        <h3 class="font-heading font-bold text-white mb-4">Get in Touch</h3>
+        <div class="space-y-3 text-white text-sm">
+         <p class="font-semibold text-white">UAE | INDIA | KSA | MALAYSIA</p>
+         <div class="flex items-start gap-2">
+          <i data-lucide="phone" style="width:14px;height:14px;flex-shrink:0;margin-top:2px;"></i> <span>+971 50 676 8820</span>
+         </div>
+         <div class="flex items-start gap-2">
+          <i data-lucide="phone" style="width:14px;height:14px;flex-shrink:0;margin-top:2px;"></i> <span>+971 50 364 6205</span>
+         </div>
+         <div class="flex items-start gap-2">
+          <i data-lucide="phone" style="width:14px;height:14px;flex-shrink:0;margin-top:2px;"></i> <span>+971 4266 3389</span>
+         </div>
+         <div class="flex items-start gap-2">
+          <i data-lucide="mail" style="width:14px;height:14px;flex-shrink:0;margin-top:2px;"></i> <span>info@greenoxgases.com</span>
+         </div>
+        </div>
+       </div><!-- Social Links -->
+       <div>
+        <h3 class="font-heading font-bold text-white mb-6">Follow Us</h3>
+        <div class="flex gap-3"><a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-gradient-to-br from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 flex items-center justify-center text-white transition-all duration-300 transform hover:scale-110 shadow-lg">
+          <svg width="20" height="20" viewbox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+          </svg></a> <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 flex items-center justify-center text-white transition-all duration-300 transform hover:scale-110 shadow-lg">
+          <svg width="20" height="20" viewbox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" />
+          </svg></a> <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-gradient-to-br from-pink-500 to-orange-500 hover:from-pink-600 hover:to-orange-600 flex items-center justify-center text-white transition-all duration-300 transform hover:scale-110 shadow-lg">
+          <svg width="20" height="20" viewbox="0 0 24 24" fill="currentColor"><rect x="2.17" y="2.17" width="19.66" height="19.66" rx="4.8" ry="4.8" fill="none" stroke="currentColor" stroke-width="1.5" /><circle cx="12" cy="12" r="3.56" fill="none" stroke="currentColor" stroke-width="1.5" /><circle cx="18.41" cy="5.59" r="0.87" fill="currentColor" />
+          </svg></a> <a href="https://wa.me/971506768820" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-gradient-to-br from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 flex items-center justify-center text-white transition-all duration-300 transform hover:scale-110 shadow-lg">
+          <svg width="20" height="20" viewbox="0 0 24 24" fill="currentColor"><path d="M17.6 6.3c-1.4-1.4-3.3-2.2-5.3-2.2-4.1 0-7.5 3.4-7.5 7.5 0 1.3.3 2.6.9 3.8L2 22l3.8-1.2c1.1.6 2.4.9 3.7.9h.1c4.1 0 7.5-3.4 7.5-7.5 0-2-0.8-3.9-2.2-5.3zm-5.3 13.1h-0.1c-1.2 0-2.3-0.3-3.3-0.8L7 20l1.4-4.5c-0.5-1-0.8-2.1-0.8-3.3 0-3.4 2.8-6.2 6.2-6.2 1.7 0 3.2 0.6 4.4 1.8 1.2 1.2 1.8 2.7 1.8 4.4 0 3.4-2.8 6.2-6.2 6.2z" />
+          </svg></a>
+        </div>
+       </div><!-- Template Image -->
+       <div class="md:col-span-2"><img src="images/SAVE_20260116_160830.jpg.jpeg" alt="Greenox industrial gases and equipment" loading="lazy" class="w-full h-48  " onerror="console.error('Image failed to load:', this.src); this.style.background='#1e90ff'; this.alt='Industrial equipment';">
+       </div>
+      </div>
+      <div class="border-t border-blue-900/30 pt-8">
+       <p class="text-center text-gray-600 text-xs">© 2026 Greenox Gases and Chemicals. All rights reserved.</p>
+      </div>
+     </div>
+    </footer>
+    <script>
+    // Mobile menu
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const overlay = document.getElementById('mobile-menu-overlay');
+    const menuIcon = document.getElementById('menu-icon');
+    let isMenuOpen = false;
+
+    menuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (isMenuOpen) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
+    });
+
+    function openMobileMenu() {
+      menu.classList.remove('-translate-x-full');
+      overlay.classList.remove('hidden');
+      // Switch to X icon
+      menuIcon.innerHTML = '<line x1="18" y1="6" x2="6" y2="18" stroke-linecap="round" stroke-linejoin="round"></line> <line x1="6" y1="6" x2="18" y2="18" stroke-linecap="round" stroke-linejoin="round"></line>';
+      isMenuOpen = true;
+    }
+
+    function closeMobileMenu() {
+      menu.classList.add('-translate-x-full');
+      overlay.classList.add('hidden');
+      // Switch back to hamburger icon
+      menuIcon.innerHTML = '<line x1="3" y1="6" x2="21" y2="6"></line> <line x1="3" y1="12" x2="21" y2="12"></line> <line x1="3" y1="18" x2="21" y2="18"></line>';
+      isMenuOpen = false;
+    }
+
+    overlay.addEventListener('click', closeMobileMenu);
+
+    // Element SDK
+    const defaultConfig = {
+      logo_header_color: "#1e90ff",
+      logo_header_bg_color: "#ffffff",
+      logo_height: "32",
+      logo_width: "auto",
+      hero_title: "Industrial Gas Supplier in UAE, India & GCC",
+      hero_subtitle: "Reliable supply of oxygen, nitrogen, helium, and specialty gases.",
+      cta_button_text: "Get a Quote",
+      secondary_button_text: "Contact Us",
+      background_color: "#ffffff",
+      surface_color: "#f8f9fa",
+      text_color: "#1e293b",
+      primary_action_color: "#1e90ff",
+      secondary_action_color: "#0066cc",
+      font_family: "Sora",
+      font_size: 16
+    };
+
+    window.elementSdk.init({
+      defaultConfig,
+      onConfigChange: async (config) => {
+        const c = { ...defaultConfig, ...config };
+        
+        // Logo header color
+        const logoImg = document.getElementById('logo-img');
+        if (logoImg) {
+          logoImg.style.filter = `hue-rotate(0deg)`;
+          logoImg.style.backgroundColor = c.logo_header_bg_color;
+          logoImg.style.color = c.logo_header_color;
+        }
+        
+        // Logo sizing
+        if (logoImg) {
+          logoImg.style.height = c.logo_height + (c.logo_height !== "auto" ? "px" : "");
+          logoImg.style.width = c.logo_width === "auto" ? "auto" : c.logo_width + "px";
+        }
+        
+        document.getElementById('hero-title').textContent = c.hero_title;
+        document.getElementById('hero-subtitle').textContent = c.hero_subtitle;
+        document.getElementById('cta-text').textContent = c.cta_button_text;
+        if (document.getElementById('secondary-text')) {
+          document.getElementById('secondary-text').textContent = c.secondary_button_text || 'Contact Us';
+        }
+
+        // Colors
+        document.body.style.backgroundColor = c.background_color;
+        document.querySelectorAll('.card-hover').forEach(el => {
+          el.style.backgroundColor = c.surface_color;
+        });
+        document.querySelectorAll('.text-gray-300, .text-gray-400').forEach(el => {
+          el.style.color = c.text_color;
+        });
+        document.getElementById('cta-btn').style.backgroundColor = c.primary_action_color;
+
+        // Font
+        const font = c.font_family || defaultConfig.font_family;
+        document.querySelectorAll('.font-heading').forEach(el => {
+          el.style.fontFamily = `${font}, sans-serif`;
+        });
+
+        // Font size
+        const base = c.font_size || defaultConfig.font_size;
+        document.getElementById('hero-title').style.fontSize = `${base * 3}px`;
+        document.getElementById('hero-subtitle').style.fontSize = `${base * 1.2}px`;
+      },
+      mapToCapabilities: (config) => {
+        const c = { ...defaultConfig, ...config };
+        return {
+          recolorables: [
+            { get: () => c.logo_header_color, set: (v) => { c.logo_header_color = v; window.elementSdk.setConfig({ logo_header_color: v }); } },
+            { get: () => c.logo_header_bg_color, set: (v) => { c.logo_header_bg_color = v; window.elementSdk.setConfig({ logo_header_bg_color: v }); } },
+            { get: () => c.background_color, set: (v) => { c.background_color = v; window.elementSdk.setConfig({ background_color: v }); } },
+            { get: () => c.surface_color, set: (v) => { c.surface_color = v; window.elementSdk.setConfig({ surface_color: v }); } },
+            { get: () => c.text_color, set: (v) => { c.text_color = v; window.elementSdk.setConfig({ text_color: v }); } },
+            { get: () => c.primary_action_color, set: (v) => { c.primary_action_color = v; window.elementSdk.setConfig({ primary_action_color: v }); } },
+            { get: () => c.secondary_action_color, set: (v) => { c.secondary_action_color = v; window.elementSdk.setConfig({ secondary_action_color: v }); } },
+          ],
+          borderables: [],
+          fontEditable: { get: () => c.font_family, set: (v) => { c.font_family = v; window.elementSdk.setConfig({ font_family: v }); } },
+          fontSizeable: { get: () => c.font_size, set: (v) => { c.font_size = v; window.elementSdk.setConfig({ font_size: v }); } }
+        };
+      },
+      mapToEditPanelValues: (config) => {
+        const c = { ...defaultConfig, ...config };
+        return new Map([
+          ["logo_header_color", c.logo_header_color],
+          ["logo_header_bg_color", c.logo_header_bg_color],
+          ["logo_height", c.logo_height],
+          ["logo_width", c.logo_width],
+          ["hero_title", c.hero_title],
+          ["hero_subtitle", c.hero_subtitle],
+          ["cta_button_text", c.cta_button_text],
+          ["secondary_button_text", c.secondary_button_text]
+        ]);
+      }
+    });
+
+    lucide.createIcons();
+  </script>
+   </section>
+  </main>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f3e12ae23507f39',t:'MTc3NzQ2MzI1Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
