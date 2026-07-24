@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greenox Gases and Chemicals</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Sora:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    html, body { height: 100%; margin: 0; }
+    * { font-family: 'DM Sans', sans-serif; }
+    .font-heading { font-family: 'Sora', sans-serif; }
+    :root {
+      --logo-height-mobile: 28px;
+      --logo-width-mobile: auto;
+    }
+    .hero-section {
+      background-color: #f8fafc;
+    }
+    .gas-particle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(30, 144, 255, 0.08);
+      animation: float 8s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0) scale(1); opacity: 0.3; }
+      50% { transform: translateY(-30px) scale(1.1); opacity: 0.6; }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up { animation: fadeUp 0.8s ease forwards; opacity: 0; }
+    .fade-up-d1 { animation-delay: 0.1s; }
+    .fade-up-d2 { animation-delay: 0.3s; }
+    .fade-up-d3 { animation-delay: 0.5s; }
+    .fade-up-d4 { animation-delay: 0.7s; }
+    .card-hover { transition: transform 0.3s, box-shadow 0.3s; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(74, 222, 128, 0.15); }
+    .nav-blur { backdrop-filter: blur(12px); background: rgba(255, 255, 255, 0.95); }
+    @media (max-width: 1023px) {
+      #logo-img {
+        height: var(--logo-height-mobile) !important;
+        width: var(--logo-width-mobile) !important;
+      }
+    }
+    /* Mobile View Adjustment */
+@media screen and (max-width: 750px) {
+    .logo-img{
+        width: 130px;      /* smaller logo for mobile */
+        max-width: 100%;
+        height: 100px;
+        margin: 0 auto;   /* center logo */
+        display: block;
+    }
+
+    .logo-img{
+        text-align: center;
+        padding: 10px 0;
+    }
+}
+
+
+  </style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full overflow-auto bg-white">
+  <!-- Navigation -->
+  
+  <nav class="nav-blur fixed top-0 left-0 w-full z-50 border-b border-blue-200 h-16 md:h-20">
+   <div class="max-w-7xl mx-auto px-4 md:px-6 h-full flex items-center justify-between">
+    <div class="flex items-center gap-3">
+     <div class="flex items-center gap-2">
+      <img class="logo-img" src="images/logo header (1).png" alt="Greenox Logo" loading="lazy" style="height: 80px; width: auto;" onerror="console.error('Logo failed to load:', this.src); this.style.background='#1e90ff'; this.alt='Greenox Logo';"><span class="font-heading font-bold text-blue-950 text-lg md:text-xl"></span>
+     </div>
+    </div>
+    <div class="hidden lg:flex items-center gap-4 xl:gap-8">
+     <a href="index.html" class="text-blue-600 text-xs xl:text-sm font-medium hover:text-blue-800 transition">Home</a> <a href="About.html" class="text-blue-600 text-xs xl:text-sm font-medium hover:text-blue-800 transition">About Us</a> <a href="#industries" class="text-blue-600 text-xs xl:text-sm font-medium hover:text-blue-800 transition">Industries</a> <a href="products.html" class="text-blue-600 text-xs xl:text-sm font-medium hover:text-blue-800 transition">Products</a> <a href="#media" class="text-blue-600 text-xs xl:text-sm font-medium hover:text-blue-800 transition">Media &amp; Downloads</a> <a href="#contact" class="text-blue-600 text-xs xl:text-sm font-medium hover:text-blue-800 transition">Contact Us</a>
+    </div>
+    <div class="hidden lg:flex items-center gap-2 xl:gap-4 text-xs xl:text-sm text-gray-600"><a href="tel:+971506768820" class="hover:text-blue-600 transition">+971 50 676 8820</a> <a href="mailto:info@greenoxgases.com" class="hover:text-blue-600 transition hidden xl:block">info@greenoxgases.com</a>
+    </div><button id="mobile-menu-btn" class="flex lg:hidden p-2 rounded-lg hover:bg-blue-100 transition text-blue-900">
+     <svg id="menu-icon" class="w-6 h-6" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6" /> <line x1="3" y1="12" x2="21" y2="12" /> <line x1="3" y1="18" x2="21" y2="18" />
+     </svg></button>
+   </div>
+  </nav><!-- Mobile Sidebar Menu -->
+  
+  <div id="mobile-menu-overlay" class="fixed inset-0 z-30 bg-black/50 hidden lg:hidden" onclick="closeMobileMenu()"></div>
+  <div id="mobile-menu" class="fixed top-0 left-0 w-64 h-full z-40 bg-gradient-to-b from-blue-950 to-blue-900 transform -translate-x-full transition-transform duration-300 ease-in-out lg:hidden shadow-2xl">
+   <div class="p-6 border-b border-blue-800 flex items-center justify-between">
+    <span class="font-heading font-bold text-white text-lg">Menu</span> <button onclick="closeMobileMenu()" class="text-white hover:text-blue-200 transition p-2">
+     <svg width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18" /> <line x1="6" y1="6" x2="18" y2="18" />
+     </svg></button>
+   </div>
+   <div class="p-6 space-y-2">
+    <a href="index.html" class="block text-white text-base font-medium hover:bg-blue-800 px-4 py-3 rounded-lg transition" onclick="closeMobileMenu()">Home</a> <a href="About.html" class="block text-white text-base font-medium hover:bg-blue-800 px-4 py-3 rounded-lg transition" onclick="closeMobileMenu()">About Us</a> <a href="#industries" class="block text-white text-base font-medium hover:bg-blue-800 px-4 py-3 rounded-lg transition" onclick="closeMobileMenu()">Industries</a> <a href="products.html" class="block text-white text-base font-medium hover:bg-blue-800 px-4 py-3 rounded-lg transition" onclick="closeMobileMenu()">Products</a> <a href="#media" class="block text-white text-base font-medium hover:bg-blue-800 px-4 py-3 rounded-lg transition" onclick="closeMobileMenu()">Media &amp; Downloads</a> <a href="#contact" class="block text-white text-base font-medium hover:bg-blue-800 px-4 py-3 rounded-lg transition" onclick="closeMobileMenu()">Contact Us</a>
+   </div>
+   <div class="px-6 py-8 border-t border-blue-800 space-y-3">
+    <p class="text-blue-200 text-xs font-semibold uppercase">Contact Info</p>
+    <div class="space-y-2 text-white text-sm">
+     <div class="flex items-center gap-2">
+      <i data-lucide="phone" style="width:16px;height:16px;"></i> <span>+971 50 676 8820</span>
+     </div>
+     <div class="flex items-center gap-2">
+      <i data-lucide="mail" style="width:16px;height:16px;"></i> <span>info@greenoxgases.com</span>
+     </div>
+    </div>
+   </div>
+  </div> <!-- Hero Section -->
+  <section id="home" class="w-full relative overflow-hidden pt-24 pb-20 md:pt-32 md:pb-28 mt-16 md:mt-20">
+   <div class="absolute inset-0 z-0">
+    <img src="images/SAVE_20260421_105320.jpg.jpeg" alt="Industrial background" loading="lazy" class="w-full h-full object-cover" onerror="console.error('Background image failed to load:', this.src); this.style.background='linear-gradient(135deg, rgba(30,144,255,0.3) 0%, rgba(0,102,204,0.3) 100%)'; this.alt='Industrial background';">
+    <div class="absolute inset-0 bg-gradient-to-br from-slate-900/60 via-blue-900/50 to-slate-900/60"></div>
+    <div class="gas-particle" style="width: 120px; height: 120px; top: 10%; left: 5%; animation-delay: 0s;"></div>
+    <div class="gas-particle" style="width: 80px; height: 80px; top: 60%; right: 5%; animation-delay: 1s;"></div>
+    <div class="gas-particle" style="width: 100px; height: 100px; top: 35%; right: 15%; animation-delay: 2s;"></div>
+   </div>
+   <div class="max-w-7xl mx-auto px-4 md:px-6 relative z-10 text-center">
+    <div class="fade-up fade-up-d2">
+     <p class="font-heading text-lg md:text-xl lg:text-2xl font-semibold text-blue-200 mb-4">About</p>
+     <h1 class="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">Greenox Gases &amp; Chemicals</h1>
+    </div>
+   </div>
+  </section><!-- About Section -->
+  <section id="about" class="w-full bg-white py-16 md:py-24">
+   <div class="max-w-6xl mx-auto px-4 md:px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch"><!-- Left: Image -->
+     <div class="order-2 md:order-1"><img src="images/GGC logo about us.png" alt="Greenox industrial gases and equipment" loading="lazy" class="w-full h-full object-cover rounded-lg shadow-lg border border-blue-100" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, rgba(30,144,255,0.3) 0%, rgba(0,102,204,0.3) 100%)'; this.alt='Industrial equipment';">
+     </div><!-- Right: Text Content -->
+     <div class="order-1 md:order-2">
+      <div class="mb-8">
+       <h2 class="font-heading text-4xl md:text-5xl font-bold text-blue-950 mb-2">Greenox Gases</h2>
+       <p class="text-lg md:text-xl text-blue-600 font-semibold">About Us</p>
+      </div>
+      <div class="space-y-6 text-gray-700 leading-relaxed">
+       <p class="text-base md:text-lg">Greenox Gases is a dynamic, multi-national group that has grown over the past six years into a leading provider of industrial gases and clean energy solutions across the Middle East, Asia, and beyond. Operating through four legal entities and a network of over 10 trusted global partners, we deliver value to clients in more than 20 countries.</p>
+       <p class="text-base md:text-lg">Our team combines deep technical expertise with commercial agility to serve diverse industries, including manufacturing, healthcare, energy, defense, and environmental sectors. From supplying critical industrial gases to designing advanced on-site gas systems, we are committed to precision, reliability, and client-focused execution.</p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- Message from Managing Director -->
+  <div class="max-w-6xl mx-auto px-4 md:px-6">
+   <div class="text-center mb-16">
+    <h2 class="font-heading text-4xl md:text-5xl font-bold text-blue-950 mb-4">Our Products &amp; Services</h2>
+    <p class="text-lg text-gray-600 max-w-3xl mx-auto">Comprehensive solutions tailored to optimize operational efficiency, safety, and sustainability across diverse industries.</p>
+   </div>
+   <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <!-- Gases -->
+    <div class="bg-white rounded-xl overflow-hidden shadow-lg border border-blue-100 card-hover"><img src="images/about us gases.png" alt="Industrial gases cylinders and equipment" loading="lazy" class="w-full h-48 object-cover" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, rgba(30,144,255,0.3) 0%, rgba(0,102,204,0.3) 100%)'; this.alt='Industrial gases';">
+     <div class="p-8">
+      <div class="mb-6">
+       <h3 class="font-heading text-2xl font-bold text-blue-950">Gases</h3>
+      </div>
+      <ul class="space-y-3 text-gray-700">
+       <li class="flex items-start gap-3"><span class="text-blue-600 font-bold mt-1">•</span> <span><strong>Helium</strong></span></li>
+       <li class="flex items-start gap-3"><span class="text-blue-600 font-bold mt-1">•</span> <span><strong>Specialty Gases and Calibration Gases</strong></span></li>
+       <li class="flex items-start gap-3"><span class="text-blue-600 font-bold mt-1">•</span> <span><strong>Bulk gases</strong> – Liquid Argon, Liquid N₂O, Ammonia, HCs and Refrigerants</span></li>
+       <li class="flex items-start gap-3"><span class="text-blue-600 font-bold mt-1">•</span> <span><strong>Medical and Industrial Gases</strong> – Oxygen, Nitrous Oxide, Argon, and other mixtures</span></li>
+       <li class="flex items-start gap-3"><span class="text-blue-600 font-bold mt-1">•</span> <span><strong>High-purity and Ultra High Purity (UHP) gases</strong></span></li>
+      </ul>
+     </div>
+    </div><!-- Equipment & Solutions -->
+    <div class="bg-white rounded-xl overflow-hidden shadow-lg border border-blue-100 card-hover"><img src="images/about us equipment.png" alt="Industrial equipment and regulators" loading="lazy" class="w-full h-48 object-cover" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, rgba(30,144,255,0.3) 0%, rgba(0,102,204,0.3) 100%)'; this.alt='Equipment';">
+     <div class="p-8">
+      <div class="mb-6">
+       <h3 class="font-heading text-2xl font-bold text-blue-950">Equipment &amp; Solutions</h3>
+      </div>
+      <ul class="space-y-3 text-gray-700">
+       <li class="flex items-start gap-3"><span class="text-blue-600 font-bold mt-1">•</span> <span>Cylinders, tanks, and regulators</span></li>
+       <li class="flex items-start gap-3"><span class="text-blue-600 font-bold mt-1">•</span> <span>Telemetry and gas tracking systems</span></li>
+       <li class="flex items-start gap-3"><span class="text-blue-600 font-bold mt-1">•</span> <span>Welding equipment and gas generators</span></li>
+       <li class="flex items-start gap-3"><span class="text-blue-600 font-bold mt-1">•</span> <span><strong>Air Separation Units (ASUs)</strong> – small, medium, and large with on-site investment and long-term supply</span></li>
+       <li class="flex items-start gap-3"><span class="text-blue-600 font-bold mt-1">•</span> <span>Plant automation and service solutions</span></li>
+      </ul>
+     </div>
+    </div><!-- Clean Energy Technologies -->
+    <div class="bg-white rounded-xl overflow-hidden shadow-lg border border-blue-100 card-hover"><img src="images/about us clean energy.png" alt="Clean energy and green hydrogen technology" loading="lazy" class="w-full h-48 object-cover" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, rgba(30,144,255,0.3) 0%, rgba(0,102,204,0.3) 100%)'; this.alt='Clean energy';">
+     <div class="p-8">
+      <div class="mb-6">
+       <h3 class="font-heading text-2xl font-bold text-blue-950">Advanced &amp; Clean Energy</h3>
+      </div>
+      <ul class="space-y-3 text-gray-700">
+       <li class="flex items-start gap-3"><span class="text-blue-600 font-bold mt-1">•</span> <span>Green hydrogen production</span></li>
+       <li class="flex items-start gap-3"><span class="text-blue-600 font-bold mt-1">•</span> <span><strong>CCUS</strong> – Carbon capture, utilization, and storage</span></li>
+       <li class="flex items-start gap-3"><span class="text-blue-600 font-bold mt-1">•</span> <span>Oxygen-enriched combustion for cement and oil &amp; gas</span></li>
+       <li class="flex items-start gap-3"><span class="text-blue-600 font-bold mt-1">•</span> <span>Recovery and safe processing of refrigerants and halons</span></li>
+       <li class="flex items-start gap-3"><span class="text-blue-600 font-bold mt-1">•</span> <span>Sustainable LPG cylinder vending solutions</span></li>
+      </ul>
+     </div>
+    </div>
+   </div><!-- Partnership Message -->
+   <div class="mt-16 bg-gradient-to-r from-blue-600 to-blue-800 rounded-xl p-8 md:p-12 text-white text-center">
+    <p class="text-lg md:text-xl leading-relaxed"><strong>At Greenox, we are more than suppliers we are strategic partners.</strong> Every solution is tailored to optimize operational efficiency, safety, and sustainability. Innovation and environmental responsibility are at the core of everything we do, helping industries transition toward a greener, more efficient future.</p>
+   </div><!-- Message from Managing Director -->
+   <div class="text-center mb-12 mt-24">
+    <h2 class="font-heading text-4xl md:text-5xl font-bold text-blue-950 mb-2">A Message from Our Managing Director</h2>
+    <div class="h-1 w-16 bg-blue-600 mx-auto mt-4"></div>
+   </div>
+   <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+    <!-- Left: Message Text -->
+    <div class="flex flex-col justify-center">
+     <div class="space-y-4 text-gray-700 leading-relaxed text-left">
+      <p class="text-xs md:text-sm italic text-blue-900 font-medium">Dear Esteemed Visitor,</p>
+      <p class="text-xs md:text-sm">Welcome to the digital home of Greenox Gases. It gives me immense pride and joy to personally welcome you to our newly designed website, a platform built not just to inform, but to inspire, engage, and reflect the values that drive us forward.</p>
+      <p class="text-xs md:text-sm">With over 17 years of experience in the industrial gas sector, spanning 10+ countries and leadership roles across five multinational Tier I &amp; II companies, I founded Greenox Gases with a clear mission: to raise the bar in gas solutions across the MENA and Asia regions. Our journey began with a passion for excellence and has since grown into a trusted, multi-national enterprise with a bold vision for the future.</p>
+      <p class="text-xs md:text-sm">At Greenox, we do more than supply gases, we engineer precision-driven, sustainable solutions tailored to the diverse needs of industries including manufacturing, healthcare, energy, food &amp; beverage, and oil &amp; gas. Our commitment is not just to product quality, but to understanding and meeting the specific challenges our clients face.</p>
+      <p class="text-xs md:text-sm">This platform was crafted with my direct involvement, not only to showcase who we are, but to serve as an educational hub for those curious about our industry. Whether you're a customer, a partner, or simply exploring the world of gases and clean technologies, we hope you find this space valuable.</p>
+      <p class="text-xs md:text-sm">I am deeply grateful to the Almighty, my family, friends, well-wishers, and the exceptional Greenox team for making this journey possible. As we scale new heights, we invite you to be part of our story — one built on trust, innovation, and a shared commitment to shaping a cleaner, better future.</p>
+      <div class="pt-4 border-t border-blue-200">
+       <p class="text-xs md:text-sm font-semibold text-blue-950">Warm regards,</p>
+       <p class="text-base md:text-lg font-bold text-blue-600 mt-2">Sulthan Salahudeen</p>
+       <p class="text-xs md:text-sm text-gray-600 font-medium">Managing Director &amp; Founder</p>
+       <p class="text-xs md:text-sm text-blue-950 font-semibold">Greenox Gases</p>
+      </div>
+     </div>
+    </div><!-- Right: Image -->
+    <div>
+     <img src="images/MD of GGC.png" alt="Sulthan Salahudeen, Managing Director of Greenox Gases" loading="lazy" class="w-full h-auto rounded-lg shadow-lg border border-blue-100" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, rgba(30,144,255,0.3) 0%, rgba(0,102,204,0.3) 100%)'; this.alt='Managing Director';">
+    </div>
+   </div>
+  </div><!-- Mission, Vision & Objectives Section -->
+  <section id="mission" class="w-full bg-gradient-to-b from-slate-50 to-white py-20 md:py-32">
+   <div class="max-w-6xl mx-auto px-4 md:px-6">
+    <div class="text-center mb-20">
+     <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-blue-950 mb-4">Our Mission, Vision &amp; Objectives</h2>
+     <p class="text-gray-600 text-lg max-w-2xl mx-auto">Guiding principles that drive every decision and shape our future</p>
+     <div class="h-1 w-24 bg-gradient-to-r from-blue-500 to-blue-700 mx-auto mt-6"></div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10"><!-- Mission -->
+     <div class="group relative">
+      <div class="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-blue-500/5 rounded-2xl transform group-hover:scale-105 transition-transform duration-300"></div>
+      <div class="relative bg-white rounded-2xl overflow-hidden shadow-lg border border-blue-100/50 hover:shadow-2xl hover:border-blue-300/50 transition-all duration-300 h-full flex flex-col">
+       <div class="relative h-48 w-full overflow-hidden bg-gradient-to-br from-blue-400 to-blue-600"><img src="images/about us  Mission.png" alt="Industrial gases and mission" loading="lazy" class="w-full h-full object-cover" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, rgba(30,144,255,0.5) 0%, rgba(0,102,204,0.5) 100%)'; this.alt='Mission image';">
+       </div>
+       <div class="p-8 flex flex-col flex-grow">
+        <div class="mb-6">
+         <h3 class="font-heading text-3xl font-bold text-blue-950 mb-1">Mission</h3>
+         <div class="h-1 w-12 bg-gradient-to-r from-blue-500 to-blue-600"></div>
+        </div>
+        <p class="text-gray-700 leading-relaxed text-base flex-grow">At Greenox Gases, we are committed to making industrial gases and related services accessible, dependable, and environmentally responsible. Our mission is to be the preferred solutions partner for businesses across the MENA, Asia and other regions, empowering industries through safe, sustainable, and efficient gas technologies.</p>
+       </div>
+      </div>
+     </div><!-- Vision -->
+     <div class="group relative">
+      <div class="absolute inset-0 bg-gradient-to-br from-green-600/10 to-green-500/5 rounded-2xl transform group-hover:scale-105 transition-transform duration-300"></div>
+      <div class="relative bg-white rounded-2xl overflow-hidden shadow-lg border border-green-100/50 hover:shadow-2xl hover:border-green-300/50 transition-all duration-300 h-full flex flex-col">
+       <div class="relative h-48 w-full overflow-hidden bg-gradient-to-br from-green-400 to-green-600"><img src="images/about us  Vision.png" alt="Vision and leadership" loading="lazy" class="w-full h-full object-cover" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, rgba(34,197,94,0.5) 0%, rgba(22,163,74,0.5) 100%)'; this.alt='Vision image';">
+       </div>
+       <div class="p-8 flex flex-col flex-grow">
+        <div class="mb-6">
+         <h3 class="font-heading text-3xl font-bold text-green-950 mb-1">Vision</h3>
+         <div class="h-1 w-12 bg-gradient-to-r from-green-500 to-green-600"></div>
+        </div>
+        <p class="text-gray-700 leading-relaxed text-base flex-grow">We aspire to be the leading force in industrial gases, gas equipment, and integrated services throughout MENA, Asia and Other regions. Through unwavering dedication, innovation, and customer-centricity, Greenox Gases is driven to exceed expectations and set new benchmarks in the industry.</p>
+       </div> 
+      </div>
+     </div><!-- Objectives -->
+     <div class="group relative">
+      <div class="absolute inset-0 bg-gradient-to-br from-amber-600/10 to-amber-500/5 rounded-2xl transform group-hover:scale-105 transition-transform duration-300"></div>
+      <div class="relative bg-white rounded-2xl overflow-hidden shadow-lg border border-amber-100/50 hover:shadow-2xl hover:border-amber-300/50 transition-all duration-300 h-full flex flex-col">
+       <div class="relative h-48 w-full overflow-hidden bg-gradient-to-br from-amber-400 to-amber-600"><img src="images/about us  Objective .png" alt="Objectives and goals" loading="lazy" class="w-full h-full object-cover" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, rgba(217,119,6,0.5) 0%, rgba(180,83,9,0.5) 100%)'; this.alt='Objectives image';">
+       </div>
+       <div class="p-8 flex flex-col flex-grow">
+        <div class="mb-6">
+         <h3 class="font-heading text-3xl font-bold text-amber-950 mb-1">Objectives</h3>
+         <div class="h-1 w-12 bg-gradient-to-r from-amber-500 to-amber-600"></div>
+        </div>
+        <ul class="space-y-3 text-gray-700 text-base flex-grow">
+         <li class="flex items-start gap-3"><span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-amber-100 text-amber-600 font-bold flex-shrink-0 text-xs mt-0.5">✓</span> <span>Deliver value-added solutions that go beyond expectations and ensure long-term customer success.</span></li>
+         <li class="flex items-start gap-3"><span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-amber-100 text-amber-600 font-bold flex-shrink-0 text-xs mt-0.5">✓</span> <span>Drive sustainable practices to actively contribute to a cleaner, greener future.</span></li>
+         <li class="flex items-start gap-3"><span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-amber-100 text-amber-600 font-bold flex-shrink-0 text-xs mt-0.5">✓</span> <span>Build collaborative, trust-based partnerships, positioning ourselves as a true "Your Solutions Partner" for every client.</span></li>
+         <li class="flex items-start gap-3"><span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-amber-100 text-amber-600 font-bold flex-shrink-0 text-xs mt-0.5">✓</span> <span>Continuously innovate and adapt to meet evolving industry needs with precision and agility.</span></li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- Mobile Sidebar Menu -->
+  <div id="mobile-menu-overlay" class="fixed inset-0 z-30 bg-black/50 hidden lg:hidden" onclick="closeMobileMenu()"></div>
+  <div id="mobile-menu" class="fixed top-0 left-0 w-64 h-full z-40 bg-gradient-to-b from-blue-950 to-blue-900 transform -translate-x-full transition-transform duration-300 ease-in-out lg:hidden shadow-2xl">
+   <div class="p-6 border-b border-blue-800 flex items-center justify-between"><span class="font-heading font-bold text-white text-lg">Menu</span> <button onclick="closeMobileMenu()" class="text-white hover:text-blue-200 transition p-2">
+     <svg width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="18" y1="6" x2="6" y2="18" /> <line x1="6" y1="6" x2="18" y2="18" />
+     </svg></button>
+   </div>
+   <div class="p-6 space-y-2"><a href="#home" class="block text-white text-base font-medium hover:bg-blue-800 px-4 py-3 rounded-lg transition" onclick="closeMobileMenu()">Home</a> <a href="#about" class="block text-white text-base font-medium hover:bg-blue-800 px-4 py-3 rounded-lg transition" onclick="closeMobileMenu()">About Us</a> <a href="#industries" class="block text-white text-base font-medium hover:bg-blue-800 px-4 py-3 rounded-lg transition" onclick="closeMobileMenu()">Industries</a> <a href="#products" class="block text-white text-base font-medium hover:bg-blue-800 px-4 py-3 rounded-lg transition" onclick="closeMobileMenu()">Products</a> <a href="#media" class="block text-white text-base font-medium hover:bg-blue-800 px-4 py-3 rounded-lg transition" onclick="closeMobileMenu()">Media &amp; Downloads</a> <a href="#contact" class="block text-white text-base font-medium hover:bg-blue-800 px-4 py-3 rounded-lg transition" onclick="closeMobileMenu()">Contact Us</a>
+   </div>
+   <div class="px-6 py-8 border-t border-blue-800 space-y-3">
+    <p class="text-blue-200 text-xs font-semibold uppercase">Contact Info</p>
+    <div class="space-y-2 text-white text-sm">
+     <div class="flex items-center gap-2"><i data-lucide="phone" style="width:16px;height:16px;"></i> <span>+971 50 676 8820</span>
+     </div>
+     <div class="flex items-center gap-2"><i data-lucide="mail" style="width:16px;height:16px;"></i> <span>info@greenoxgases.com</span>
+     </div>
+    </div>
+   </div>
+  </div><!-- Footer -->
+    <footer class="w-full bg-blue-950 border-t border-blue-900/30 py-16">
+     <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-12 mb-12"><!-- Get in Touch -->
+       <div>
+        <h3 class="font-heading font-bold text-white mb-4">Get in Touch</h3>
+        <div class="space-y-3 text-white text-sm">
+         <p class="font-semibold text-white">UAE | INDIA | KSA | MALAYSIA</p>
+         <div class="flex items-start gap-2">
+          <i data-lucide="phone" style="width:14px;height:14px;flex-shrink:0;margin-top:2px;"></i> <span>+971 50 676 8820</span>
+         </div>
+         <div class="flex items-start gap-2">
+          <i data-lucide="phone" style="width:14px;height:14px;flex-shrink:0;margin-top:2px;"></i> <span>+971 50 364 6205</span>
+         </div>
+         <div class="flex items-start gap-2">
+          <i data-lucide="phone" style="width:14px;height:14px;flex-shrink:0;margin-top:2px;"></i> <span>+971 4266 3389</span>
+         </div>
+         <div class="flex items-start gap-2">
+          <i data-lucide="mail" style="width:14px;height:14px;flex-shrink:0;margin-top:2px;"></i> <span>info@greenoxgases.com</span>
+         </div>
+        </div>
+       </div><!-- Social Links -->
+       <div>
+        <h3 class="font-heading font-bold text-white mb-6">Follow Us</h3>
+        <div class="flex gap-3"><a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-gradient-to-br from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 flex items-center justify-center text-white transition-all duration-300 transform hover:scale-110 shadow-lg">
+          <svg width="20" height="20" viewbox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+          </svg></a> <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 flex items-center justify-center text-white transition-all duration-300 transform hover:scale-110 shadow-lg">
+          <svg width="20" height="20" viewbox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" />
+          </svg></a> <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-gradient-to-br from-pink-500 to-orange-500 hover:from-pink-600 hover:to-orange-600 flex items-center justify-center text-white transition-all duration-300 transform hover:scale-110 shadow-lg">
+          <svg width="20" height="20" viewbox="0 0 24 24" fill="currentColor"><rect x="2.17" y="2.17" width="19.66" height="19.66" rx="4.8" ry="4.8" fill="none" stroke="currentColor" stroke-width="1.5" /><circle cx="12" cy="12" r="3.56" fill="none" stroke="currentColor" stroke-width="1.5" /><circle cx="18.41" cy="5.59" r="0.87" fill="currentColor" />
+          </svg></a> <a href="https://wa.me/971506768820" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-gradient-to-br from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 flex items-center justify-center text-white transition-all duration-300 transform hover:scale-110 shadow-lg">
+          <svg width="20" height="20" viewbox="0 0 24 24" fill="currentColor"><path d="M17.6 6.3c-1.4-1.4-3.3-2.2-5.3-2.2-4.1 0-7.5 3.4-7.5 7.5 0 1.3.3 2.6.9 3.8L2 22l3.8-1.2c1.1.6 2.4.9 3.7.9h.1c4.1 0 7.5-3.4 7.5-7.5 0-2-0.8-3.9-2.2-5.3zm-5.3 13.1h-0.1c-1.2 0-2.3-0.3-3.3-0.8L7 20l1.4-4.5c-0.5-1-0.8-2.1-0.8-3.3 0-3.4 2.8-6.2 6.2-6.2 1.7 0 3.2 0.6 4.4 1.8 1.2 1.2 1.8 2.7 1.8 4.4 0 3.4-2.8 6.2-6.2 6.2z" />
+          </svg></a>
+        </div>
+       </div><!-- Template Image -->
+       <div class="md:col-span-2"><img src="images/SAVE_20260116_160830.jpg.jpeg" alt="Greenox industrial gases and equipment" loading="lazy" class="w-full h-48  " onerror="console.error('Image failed to load:', this.src); this.style.background='#1e90ff'; this.alt='Industrial equipment';">
+       </div>
+      </div>
+      <div class="border-t border-blue-900/30 pt-8">
+       <p class="text-center text-gray-600 text-xs">© 2026 Greenox Gases and Chemicals. All rights reserved.</p>
+      </div>
+     </div>
+    </footer>
+  <script>
+    // Mobile menu
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const overlay = document.getElementById('mobile-menu-overlay');
+    const menuIcon = document.getElementById('menu-icon');
+    let isMenuOpen = false;
+
+    menuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (isMenuOpen) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
+    });
+
+    function openMobileMenu() {
+      menu.classList.remove('-translate-x-full');
+      overlay.classList.remove('hidden');
+      menuIcon.innerHTML = '<line x1="18" y1="6" x2="6" y2="18" stroke-linecap="round" stroke-linejoin="round"></line> <line x1="6" y1="6" x2="18" y2="18" stroke-linecap="round" stroke-linejoin="round"></line>';
+      isMenuOpen = true;
+    }
+
+    function closeMobileMenu() {
+      menu.classList.add('-translate-x-full');
+      overlay.classList.add('hidden');
+      menuIcon.innerHTML = '<line x1="3" y1="6" x2="21" y2="6"></line> <line x1="3" y1="12" x2="21" y2="12"></line> <line x1="3" y1="18" x2="21" y2="18"></line>';
+      isMenuOpen = false;
+    }
+
+    overlay.addEventListener('click', closeMobileMenu);
+
+    // Element SDK
+    const defaultConfig = {
+      logo_header_color: "#1e90ff",
+      logo_header_bg_color: "#ffffff",
+      logo_height: "32",
+      logo_width: "auto",
+      logo_height_mobile: "28",
+      logo_width_mobile: "auto",
+      hero_title: "Industrial Gas Supplier in UAE, India & GCC",
+      hero_subtitle: "Reliable supply of oxygen, nitrogen, helium, and specialty gases.",
+      cta_button_text: "Get a Quote",
+      secondary_button_text: "Contact Us",
+      font_family: "Sora",
+      font_size: 16
+    };
+
+    window.elementSdk.init({
+      defaultConfig,
+      onConfigChange: async (config) => {
+        const c = { ...defaultConfig, ...config };
+        
+        const logoImg = document.getElementById('logo-img');
+        if (logoImg) {
+          logoImg.style.filter = `hue-rotate(0deg)`;
+          logoImg.style.backgroundColor = c.logo_header_bg_color;
+          logoImg.style.color = c.logo_header_color;
+        }
+        
+        if (logoImg) {
+          logoImg.style.height = c.logo_height + (c.logo_height !== "auto" ? "px" : "");
+          logoImg.style.width = c.logo_width === "auto" ? "auto" : c.logo_width + "px";
+        }
+        
+        const isMobile = window.innerWidth < 1024;
+        if (isMobile) {
+          document.documentElement.style.setProperty('--logo-height-mobile', c.logo_height_mobile + (c.logo_height_mobile !== "auto" ? "px" : "auto"));
+          document.documentElement.style.setProperty('--logo-width-mobile', c.logo_width_mobile === "auto" ? "auto" : c.logo_width_mobile + "px");
+        }
+        
+        document.getElementById('hero-title').textContent = c.hero_title;
+        document.getElementById('hero-subtitle').textContent = c.hero_subtitle;
+        document.getElementById('cta-text').textContent = c.cta_button_text;
+        document.getElementById('secondary-text').textContent = c.secondary_button_text;
+      },
+      mapToCapabilities: (config) => {
+        const c = { ...defaultConfig, ...config };
+        return {
+          recolorables: [
+            { get: () => c.logo_header_color, set: (v) => { c.logo_header_color = v; window.elementSdk.setConfig({ logo_header_color: v }); } },
+            { get: () => c.logo_header_bg_color, set: (v) => { c.logo_header_bg_color = v; window.elementSdk.setConfig({ logo_header_bg_color: v }); } }
+          ],
+          borderables: [],
+          fontEditable: { get: () => c.font_family, set: (v) => { c.font_family = v; window.elementSdk.setConfig({ font_family: v }); } },
+          fontSizeable: undefined
+        };
+      },
+      mapToEditPanelValues: (config) => {
+        const c = { ...defaultConfig, ...config };
+        return new Map([
+          ["logo_header_color", c.logo_header_color],
+          ["logo_header_bg_color", c.logo_header_bg_color],
+          ["logo_height", c.logo_height],
+          ["logo_width", c.logo_width],
+          ["logo_height_mobile", c.logo_height_mobile],
+          ["logo_width_mobile", c.logo_width_mobile],
+          ["hero_title", c.hero_title],
+          ["hero_subtitle", c.hero_subtitle],
+          ["cta_button_text", c.cta_button_text],
+          ["secondary_button_text", c.secondary_button_text]
+        ]);
+      }
+    });
+
+    lucide.createIcons();
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f858f9d47228022',t:'MTc3ODIxMjg2My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

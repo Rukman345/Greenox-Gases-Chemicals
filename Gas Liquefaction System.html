@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260706-03-fe1d6e3"}');</script><script src="/_sdk/f432b76fb310b513.telemetry_sdk.js" integrity="sha512-9FJQ55EKmmqhyyik8BhrMVfm0+iYYfb8uOlRsjtkxJMEI97qOVEI4PnHohDjQAtvAep0IOEpdQ64eki0sz62ug=="></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greenox Gas Liquefaction Systems</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <script src="/_sdk/8650958800d6c92a.element_sdk.js" integrity="sha512-zFMhEG5W24TdVhhc4yw+K4kKrl6mClLz7Nz7OlZcKY64bZTx26LpVI6mwMCarQMzfrHe8i4fBMu4fxoFej2m9g=="></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Sora:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    html, body { height: 100%; margin: 0; }
+    * { font-family: 'DM Sans', sans-serif; }
+    .font-heading { font-family: 'Sora', sans-serif; }
+    :root {
+      --logo-height-mobile: 28px;
+      --logo-width-mobile: auto;
+    }
+    .nav-blur { backdrop-filter: blur(12px); background: rgba(255, 255, 255, 0.95); }
+    @media (max-width: 1023px) {
+      #logo-img {
+        height: var(--logo-height-mobile) !important;
+        width: var(--logo-width-mobile) !important;
+      }
+    }
+    /* Mobile View Adjustment */
+@media screen and (max-width: 750px) {
+    .logo-img{
+        width: 130px;      /* smaller logo for mobile */
+        max-width: 100%;
+        height: 100px;
+        margin: 0 auto;   /* center logo */
+        display: block;
+    }
+
+    .logo-img{
+        text-align: center;
+        padding: 10px 0;
+    }
+}
+  </style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="/_sdk/0179d719c431a79e.data_sdk.js" type="text/javascript" integrity="sha512-OsRvJkI5GkC3MJQcgotQYotpzrMSX415GiKKgvYdxQEEkzD/fdchShO2FMSy0PJr/tiINMXOk5Vl2zAgg6bUiA=="></script>
+ </head>
+ <body class="h-full overflow-auto bg-white"><!-- Navigation -->
+  <!-- Navigation -->
+  <nav class="nav-blur fixed top-0 left-0 w-full z-50 border-b border-blue-200 h-16 md:h-20">
+   <div class="max-w-7xl mx-auto px-4 md:px-6 h-full flex items-center justify-between">
+    <div class="flex items-center gap-3">
+     <div class="flex items-center gap-2">
+      <img class="logo-img" src="images/logo header (1).png" alt="Greenox Logo" loading="lazy" style="height: 80px; width: auto;" onerror="console.error('Logo failed to load:', this.src); this.style.background='#1e90ff'; this.alt='Greenox Logo';"><span class="font-heading font-bold text-blue-950 text-lg md:text-xl"></span>
+     </div>
+    </div>
+    <div class="hidden lg:flex items-center gap-4 xl:gap-8">
+     <a href="index.html" class="text-blue-600 text-xs xl:text-sm font-medium hover:text-blue-800 transition">Home</a> <a href="About.html" class="text-blue-600 text-xs xl:text-sm font-medium hover:text-blue-800 transition">About Us</a> <a href="#industries" class="text-blue-600 text-xs xl:text-sm font-medium hover:text-blue-800 transition">Industries</a> <a href="products.html" class="text-blue-600 text-xs xl:text-sm font-medium hover:text-blue-800 transition">Products</a> <a href="#media" class="text-blue-600 text-xs xl:text-sm font-medium hover:text-blue-800 transition">Media &amp; Downloads</a> <a href="#contact" class="text-blue-600 text-xs xl:text-sm font-medium hover:text-blue-800 transition">Contact Us</a>
+    </div>
+    <div class="hidden lg:flex items-center gap-2 xl:gap-4 text-xs xl:text-sm text-gray-600"><a href="tel:+971506768820" class="hover:text-blue-600 transition">+971 50 676 8820</a> <a href="mailto:info@greenoxgases.com" class="hover:text-blue-600 transition hidden xl:block">info@greenoxgases.com</a>
+    </div><button id="mobile-menu-btn" class="flex lg:hidden p-2 rounded-lg hover:bg-blue-100 transition text-blue-900">
+     <svg id="menu-icon" class="w-6 h-6" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6" /> <line x1="3" y1="12" x2="21" y2="12" /> <line x1="3" y1="18" x2="21" y2="18" />
+     </svg></button>
+   </div>
+  </nav> <!-- Mobile Sidebar Menu -->
+  
+  <div id="mobile-menu-overlay" class="fixed inset-0 z-30 bg-black/50 hidden lg:hidden" onclick="closeMobileMenu()"></div>
+  <div id="mobile-menu" class="fixed top-0 left-0 w-64 h-full z-40 bg-gradient-to-b from-blue-950 to-blue-900 transform -translate-x-full transition-transform duration-300 ease-in-out lg:hidden shadow-2xl">
+   <div class="p-6 border-b border-blue-800 flex items-center justify-between">
+    <span class="font-heading font-bold text-white text-lg">Menu</span> <button onclick="closeMobileMenu()" class="text-white hover:text-blue-200 transition p-2">
+     <svg width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18" /> <line x1="6" y1="6" x2="18" y2="18" />
+     </svg></button>
+   </div>
+   <div class="p-6 space-y-2">
+    <a href="index.html" class="block text-white text-base font-medium hover:bg-blue-800 px-4 py-3 rounded-lg transition" onclick="closeMobileMenu()">Home</a> <a href="About.html" class="block text-white text-base font-medium hover:bg-blue-800 px-4 py-3 rounded-lg transition" onclick="closeMobileMenu()">About Us</a> <a href="#industries" class="block text-white text-base font-medium hover:bg-blue-800 px-4 py-3 rounded-lg transition" onclick="closeMobileMenu()">Industries</a> <a href="products.html" class="block text-white text-base font-medium hover:bg-blue-800 px-4 py-3 rounded-lg transition" onclick="closeMobileMenu()">Products</a> <a href="#media" class="block text-white text-base font-medium hover:bg-blue-800 px-4 py-3 rounded-lg transition" onclick="closeMobileMenu()">Media &amp; Downloads</a> <a href="#contact" class="block text-white text-base font-medium hover:bg-blue-800 px-4 py-3 rounded-lg transition" onclick="closeMobileMenu()">Contact Us</a>
+   </div>
+   <div class="px-6 py-8 border-t border-blue-800 space-y-3">
+    <p class="text-blue-200 text-xs font-semibold uppercase">Contact Info</p>
+    <div class="space-y-2 text-white text-sm">
+     <div class="flex items-center gap-2">
+      <i data-lucide="phone" style="width:16px;height:16px;"></i> <span>+971 50 676 8820</span>
+     </div>
+     <div class="flex items-center gap-2">
+      <i data-lucide="mail" style="width:16px;height:16px;"></i> <span>info@greenoxgases.com</span>
+     </div>
+    </div>
+   </div>
+  </div>
+
+ <!-- Hero Section -->
+  <section id="home" class="w-full relative overflow-hidden pt-24 pb-20 md:pt-32 md:pb-28 mt-16 md:mt-20">
+   <div class="absolute inset-0 z-0">
+    <img src="images/SAVE_20260421_105320.jpg.jpeg" alt="Industrial background" loading="lazy" class="w-full h-full object-cover" onerror="console.error('Background image failed to load:', this.src); this.style.background='linear-gradient(135deg, rgba(30,144,255,0.3) 0%, rgba(0,102,204,0.3) 100%)'; this.alt='Industrial background';">
+    <div class="absolute inset-0 bg-gradient-to-br from-slate-900/60 via-blue-900/50 to-slate-900/60"></div>
+    <div class="gas-particle" style="width: 120px; height: 120px; top: 10%; left: 5%; animation-delay: 0s;"></div>
+    <div class="gas-particle" style="width: 80px; height: 80px; top: 60%; right: 5%; animation-delay: 1s;"></div>
+    <div class="gas-particle" style="width: 100px; height: 100px; top: 35%; right: 15%; animation-delay: 2s;"></div>
+   </div>
+   <div class="max-w-7xl mx-auto px-4 md:px-6 relative z-10 text-center">
+    <div class="fade-up fade-up-d2">
+     <p class="font-heading text-lg md:text-xl lg:text-2xl font-semibold text-blue-200 mb-4"></p>
+     <h1 class="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">Oxygen (O₂)</h1>
+    </div>
+   </div>
+  </section><!-- ASU Introduction -->
+  <div class="w-full bg-white py-12 md:py-16 lg:py-20">
+   <div class="max-w-7xl mx-auto px-4 md:px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+     <div class="space-y-4">
+      <p class="text-lg text-gray-700 leading-relaxed">Greenox Gases delivers high-efficiency gas liquefaction systems through our strategic partnership with Teamwin (cryogenic equipment) and Yuanhan Energy (process technology), providing reliable, energy-optimized solutions for liquefying argon, CO₂, nitrogen, oxygen, and other industrial gases.</p>
+      <p class="text-lg text-gray-700 leading-relaxed">A Gas Liquefaction System is an industrial process used to cool gases to very low temperatures until they condense into liquid form. This process involves cooling the gas to extremely low temperatures, often using refrigeration cycles, until it condenses into a liquid.</p>
+     </div>
+     <div class="hidden lg:flex justify-center items-center">
+      <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&amp;h=400&amp;fit=crop" alt="Gas Liquefaction Equipment" loading="lazy" class="rounded-lg shadow-lg w-full h-auto object-cover" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, #667eea 0%, #764ba2 100%)'; this.alt='Gas Liquefaction Equipment';">
+     </div>
+    </div>
+   </div>
+  </div><!-- ASU Technology Overview -->
+  <div class="w-full bg-gradient-to-b from-gray-50 to-white py-16 md:py-24 lg:py-32">
+   <div class="max-w-7xl mx-auto px-4 md:px-6 space-y-16"><!-- ASU Technology Overview -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 transition-all duration-300 hover:shadow-xl hover:border-blue-300 hover:-translate-y-1 hover:bg-gray-50">
+     <div class="flex flex-col lg:flex-row">
+      <div class="p-8 md:p-12 lg:w-full">
+       <h2 class="font-heading text-3xl md:text-4xl font-bold text-blue-950 mb-4">Liquefaction Technology Overview</h2>
+       <div class="space-y-4 mb-8">
+        <div>
+         <h3 class="font-semibold text-lg text-blue-950 mb-2">How It Works</h3>
+         <p class="text-gray-700">Our systems use cryogenic cooling, compression, and expansion cycles to convert gases into liquid form at ultra-low temperatures:</p>
+         <ul class="list-disc list-inside text-gray-700 ml-2 mt-2 space-y-1">
+          <li>Nitrogen/Oxygen/Argon: –196°C (77K) via Claude Cycle</li>
+          <li>CO₂: –56.6°C (216.6K) via Cascade Refrigeration</li>
+          <li>Custom Gases: Specialized cycles for hydrogen, helium, etc.</li>
+         </ul>
+        </div>
+        <div>
+         <h3 class="font-semibold text-lg text-blue-950 mb-2">Key Partners</h3>
+         <p class="text-gray-700"><strong>Teamwin</strong> – Fabricates ASME-certified cold boxes, heat exchangers, and storage tanks</p>
+         <p class="text-gray-700"><strong>Yuanhan Energy</strong> - Provides energy-recovery turboexpanders and AI-driven process control</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div><!-- ASU Product Range -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 transition-all duration-300 hover:shadow-xl hover:border-purple-300 hover:-translate-y-1 hover:bg-gray-50">
+     <div class="flex flex-col lg:flex-row-reverse">
+      <div class="p-8 md:p-12 lg:w-full">
+       <h2 class="font-heading text-3xl md:text-4xl font-bold text-blue-950 mb-2">Gas Liquefier Product Range</h2>
+       <p class="text-gray-600 mb-6 italic">Compliant with ASME BPVC, PED 2014/68/EU, GB/T 18443</p>
+       <div class="overflow-x-auto">
+        <table class="w-full border-collapse">
+         <thead>
+          <tr class="bg-purple-50 border-b-2 border-purple-300">
+           <th class="px-4 py-3 text-left font-bold text-blue-950">Model</th>
+           <th class="px-4 py-3 text-left font-bold text-blue-950">Capacity (TPD*)</th>
+           <th class="px-4 py-3 text-left font-bold text-blue-950">Liquefied Gases</th>
+           <th class="px-4 py-3 text-left font-bold text-blue-950">Power Consumption</th>
+           <th class="px-4 py-3 text-left font-bold text-blue-950">Key Feature</th>
+          </tr>
+         </thead>
+         <tbody>
+          <tr class="border-b border-gray-200 hover:bg-purple-50 transition">
+           <td class="px-4 py-3 font-semibold text-gray-900">LQ-100</td>
+           <td class="px-4 py-3 text-gray-700">5–20 TPD</td>
+           <td class="px-4 py-3 text-gray-700">N₂, O₂, Ar</td>
+           <td class="px-4 py-3 text-gray-700">0.45 kWh/kg</td>
+           <td class="px-4 py-3 text-gray-700">Skid-mounted</td>
+          </tr>
+          <tr class="border-b border-gray-200 hover:bg-purple-50 transition">
+           <td class="px-4 py-3 font-semibold text-gray-900">LQ-500</td>
+           <td class="px-4 py-3 text-gray-700">50–200 TPD</td>
+           <td class="px-4 py-3 text-gray-700">CO₂, N₂, O₂</td>
+           <td class="px-4 py-3 text-gray-700">0.38 kWh/kg</td>
+           <td class="px-4 py-3 text-gray-700">Hybrid Brayton-Claude cycle</td>
+          </tr>
+          <tr class="border-b border-gray-200 hover:bg-purple-50 transition">
+           <td class="px-4 py-3 font-semibold text-gray-900">LQ-2000</td>
+           <td class="px-4 py-3 text-gray-700">200–1,000 TPD</td>
+           <td class="px-4 py-3 text-gray-700">Ar, LNG, H₂</td>
+           <td class="px-4 py-3 text-gray-700">0.30 kWh/kg</td>
+           <td class="px-4 py-3 text-gray-700">Zero Boil-Off (ZBO) design</td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+      </div>
+     </div>
+    </div><!-- Core Components -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 transition-all duration-300 hover:shadow-xl hover:border-green-300 hover:-translate-y-1 hover:bg-gray-50">
+     <div class="flex flex-col lg:flex-row">
+      <div class="p-8 md:p-12 lg:w-full">
+       <h2 class="font-heading text-3xl md:text-4xl font-bold text-blue-950 mb-8">Core Components We Supply</h2>
+       <div class="space-y-6">
+        <div class="pb-6 border-b border-gray-200">
+         <h3 class="font-semibold text-lg text-blue-950 mb-2">1. Compression System</h3>
+         <ul class="list-disc list-inside text-gray-700 space-y-1">
+          <li>Oil-free screw/centrifugal compressors (up to 60 bar)</li>
+          <li>Yuanhan's waste heat recovery for energy savings</li>
+         </ul>
+        </div>
+        <div class="pb-6 border-b border-gray-200">
+         <h3 class="font-semibold text-lg text-blue-950 mb-2">2. Cold Box &amp; Heat Exchangers</h3>
+         <ul class="list-disc list-inside text-gray-700 space-y-1">
+          <li>Teamwin's aluminum plate-fin exchangers (95% efficiency)</li>
+          <li>Vacuum-insulated piping (–196°C to –269°C)</li>
+         </ul>
+        </div>
+        <div class="pb-6 border-b border-gray-200">
+         <h3 class="font-semibold text-lg text-blue-950 mb-2">3. Turboexpanders</h3>
+         <ul class="list-disc list-inside text-gray-700 space-y-1">
+          <li>Yuanhan's high-efficiency expansion turbines (90% isentropic efficiency)</li>
+         </ul>
+        </div>
+        <div>
+         <h3 class="font-semibold text-lg text-blue-950 mb-2">4. Control &amp; Monitoring</h3>
+         <ul class="list-disc list-inside text-gray-700 space-y-1">
+          <li>Siemens PCS7 automation</li>
+          <li>Remote predictive maintenance alerts</li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div><!-- Industry Applications -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 transition-all duration-300 hover:shadow-xl hover:border-orange-300 hover:-translate-y-1 hover:bg-gray-50">
+     <div class="flex flex-col lg:flex-row-reverse">
+      <div class="p-8 md:p-12 lg:w-full">
+       <h2 class="font-heading text-3xl md:text-4xl font-bold text-blue-950 mb-8">Applications by Industry</h2>
+       <div class="overflow-x-auto">
+        <table class="w-full border-collapse">
+         <thead>
+          <tr class="bg-orange-50 border-b-2 border-orange-300">
+           <th class="px-4 py-3 text-left font-bold text-blue-950">Industry</th>
+           <th class="px-4 py-3 text-left font-bold text-blue-950">Use Case</th>
+           <th class="px-4 py-3 text-left font-bold text-blue-950">Liquefied Gas</th>
+           <th class="px-4 py-3 text-left font-bold text-blue-950">Partner Tech Used</th>
+          </tr>
+         </thead>
+         <tbody>
+          <tr class="border-b border-gray-200 hover:bg-orange-50 transition">
+           <td class="px-4 py-3 font-semibold text-gray-900">Medical</td>
+           <td class="px-4 py-3 text-gray-700">Liquid O₂ for hospitals</td>
+           <td class="px-4 py-3 text-gray-700">Oxygen (LOX)</td>
+           <td class="px-4 py-3 text-gray-700">Teamwin's sterile cold box</td>
+          </tr>
+          <tr class="border-b border-gray-200 hover:bg-orange-50 transition">
+           <td class="px-4 py-3 font-semibold text-gray-900">Food</td>
+           <td class="px-4 py-3 text-gray-700">CO₂ for beverage freezing</td>
+           <td class="px-4 py-3 text-gray-700">CO₂ (LCO₂)</td>
+           <td class="px-4 py-3 text-gray-700">Yuanhan's low-energy cycle</td>
+          </tr>
+          <tr class="border-b border-gray-200 hover:bg-orange-50 transition">
+           <td class="px-4 py-3 font-semibold text-gray-900">Semiconductor</td>
+           <td class="px-4 py-3 text-gray-700">Ultra-pure LN₂ for cooling</td>
+           <td class="px-4 py-3 text-gray-700">Nitrogen (LIN)</td>
+           <td class="px-4 py-3 text-gray-700">Hybrid liquefaction</td>
+          </tr>
+          <tr class="border-b border-gray-200 hover:bg-orange-50 transition">
+           <td class="px-4 py-3 font-semibold text-gray-900">Energy</td>
+           <td class="px-4 py-3 text-gray-700">LH₂ for fuel storage</td>
+           <td class="px-4 py-3 text-gray-700">Hydrogen (LH₂)</td>
+           <td class="px-4 py-3 text-gray-700">Cryo-adsorption tech</td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+      </div>
+     </div>
+    </div><!-- Why Partner With Greenox -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 transition-all duration-300 hover:shadow-xl hover:border-cyan-300 hover:-translate-y-1 hover:bg-gray-50">
+     <div class="flex flex-col lg:flex-row">
+      <div class="p-8 md:p-12 lg:w-full">
+       <h2 class="font-heading text-3xl md:text-4xl font-bold text-blue-950 mb-8">Why Choose Greenox Liquefiers?</h2>
+       <div class="space-y-4">
+        <div class="flex gap-4">
+         <div class="flex-shrink-0 text-2xl">
+          
+         </div>
+         <div>
+          <h3 class="font-semibold text-blue-950 mb-1">Energy Efficient</h3>
+          <p class="text-gray-700">Up to 25% lower power than conventional systems</p>
+         </div>
+        </div>
+        <div class="flex gap-4">
+         <div class="flex-shrink-0 text-2xl">
+          
+         </div>
+         <div>
+          <h3 class="font-semibold text-blue-950 mb-1">Modular &amp; Scalable</h3>
+          <p class="text-gray-700">From 5 TPD to 1,000+ TPD</p>
+         </div>
+        </div>
+        <div class="flex gap-4">
+         <div class="flex-shrink-0 text-2xl">
+          
+         </div>
+         <div>
+          <h3 class="font-semibold text-blue-950 mb-1">Partner-Backed Reliability</h3>
+          <p class="text-gray-700">Teamwin's 20-year cryo expertise + Yuanhan's smart controls</p>
+         </div>
+        </div>
+        <div class="flex gap-4">
+         <div class="flex-shrink-0 text-2xl">
+          
+         </div>
+         <div>
+          <h3 class="font-semibold text-blue-950 mb-1">Full Lifecycle Support</h3>
+          <p class="text-gray-700">Installation, training, spare parts</p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div><!-- Key Differentiators -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 transition-all duration-300 hover:shadow-xl hover:border-rose-300 hover:-translate-y-1 hover:bg-gray-50">
+     <div class="flex flex-col lg:flex-row-reverse">
+      <div class="p-8 md:p-12 lg:w-full">
+       <h2 class="font-heading text-3xl md:text-4xl font-bold text-blue-950 mb-8">Key Differentiators</h2>
+       <div class="space-y-6">
+        <div>
+         <h3 class="font-semibold text-lg text-blue-950 mb-2">Teamwin Hardware</h3>
+         <ul class="list-disc list-inside text-gray-700 space-y-1">
+          <li>Patented cold box design (TW-Cryo-2023)</li>
+          <li>Leak-proof brazed aluminum exchangers</li>
+         </ul>
+        </div>
+        <div>
+         <h3 class="font-semibold text-lg text-blue-950 mb-2">Yuanhan Software</h3>
+         <ul class="list-disc list-inside text-gray-700 space-y-1">
+          <li>AI-driven load optimization</li>
+          <li>Digital twin for performance tracking</li>
+         </ul>
+        </div>
+        <div>
+         <h3 class="font-semibold text-lg text-blue-950 mb-2">Greenox Value</h3>
+         <ul class="list-disc list-inside text-gray-700 space-y-1">
+          <li>Turnkey liquefaction plants</li>
+          <li>BOT (Build-Operate-Transfer) financing</li>
+         </ul>
+        </div>
+        <div>
+         <h3 class="font-semibold text-lg text-blue-950 mb-2">Technical Support</h3>
+         <ul class="list-disc list-inside text-gray-700 space-y-1">
+          <li>Process simulation (HYSYS, Aspen Plus)</li>
+          <li>Cold energy recovery for power savings</li>
+          <li>Retrofits for outdated liquefaction plants</li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- Footer -->
+    <footer class="w-full bg-blue-950 border-t border-blue-900/30 py-16">
+     <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-12 mb-12"><!-- Get in Touch -->
+       <div>
+        <h3 class="font-heading font-bold text-white mb-4">Get in Touch</h3>
+        <div class="space-y-3 text-white text-sm">
+         <p class="font-semibold text-white">UAE | INDIA | KSA | MALAYSIA</p>
+         <div class="flex items-start gap-2">
+          <i data-lucide="phone" style="width:14px;height:14px;flex-shrink:0;margin-top:2px;"></i> <span>+971 50 676 8820</span>
+         </div>
+         <div class="flex items-start gap-2">
+          <i data-lucide="phone" style="width:14px;height:14px;flex-shrink:0;margin-top:2px;"></i> <span>+971 50 364 6205</span>
+         </div>
+         <div class="flex items-start gap-2">
+          <i data-lucide="phone" style="width:14px;height:14px;flex-shrink:0;margin-top:2px;"></i> <span>+971 4266 3389</span>
+         </div>
+         <div class="flex items-start gap-2">
+          <i data-lucide="mail" style="width:14px;height:14px;flex-shrink:0;margin-top:2px;"></i> <span>info@greenoxgases.com</span>
+         </div>
+        </div>
+       </div><!-- Social Links -->
+       <div>
+        <h3 class="font-heading font-bold text-white mb-6">Follow Us</h3>
+        <div class="flex gap-3"><a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-gradient-to-br from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 flex items-center justify-center text-white transition-all duration-300 transform hover:scale-110 shadow-lg">
+          <svg width="20" height="20" viewbox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+          </svg></a> <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 flex items-center justify-center text-white transition-all duration-300 transform hover:scale-110 shadow-lg">
+          <svg width="20" height="20" viewbox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" />
+          </svg></a> <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-gradient-to-br from-pink-500 to-orange-500 hover:from-pink-600 hover:to-orange-600 flex items-center justify-center text-white transition-all duration-300 transform hover:scale-110 shadow-lg">
+          <svg width="20" height="20" viewbox="0 0 24 24" fill="currentColor"><rect x="2.17" y="2.17" width="19.66" height="19.66" rx="4.8" ry="4.8" fill="none" stroke="currentColor" stroke-width="1.5" /><circle cx="12" cy="12" r="3.56" fill="none" stroke="currentColor" stroke-width="1.5" /><circle cx="18.41" cy="5.59" r="0.87" fill="currentColor" />
+          </svg></a> <a href="https://wa.me/971506768820" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-gradient-to-br from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 flex items-center justify-center text-white transition-all duration-300 transform hover:scale-110 shadow-lg">
+          <svg width="20" height="20" viewbox="0 0 24 24" fill="currentColor"><path d="M17.6 6.3c-1.4-1.4-3.3-2.2-5.3-2.2-4.1 0-7.5 3.4-7.5 7.5 0 1.3.3 2.6.9 3.8L2 22l3.8-1.2c1.1.6 2.4.9 3.7.9h.1c4.1 0 7.5-3.4 7.5-7.5 0-2-0.8-3.9-2.2-5.3zm-5.3 13.1h-0.1c-1.2 0-2.3-0.3-3.3-0.8L7 20l1.4-4.5c-0.5-1-0.8-2.1-0.8-3.3 0-3.4 2.8-6.2 6.2-6.2 1.7 0 3.2 0.6 4.4 1.8 1.2 1.2 1.8 2.7 1.8 4.4 0 3.4-2.8 6.2-6.2 6.2z" />
+          </svg></a>
+        </div>
+       </div><!-- Template Image -->
+       <div class="md:col-span-2"><img src="images/SAVE_20260116_160830.jpg.jpeg" alt="Greenox industrial gases and equipment" loading="lazy" class="w-full h-48  " onerror="console.error('Image failed to load:', this.src); this.style.background='#1e90ff'; this.alt='Industrial equipment';">
+       </div>
+      </div>
+      <div class="border-t border-blue-900/30 pt-8">
+       <p class="text-center text-gray-600 text-xs">© 2026 Greenox Gases and Chemicals. All rights reserved.</p>
+      </div>
+     </div>
+    </footer>
+  <script>
+    // Mobile menu
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const overlay = document.getElementById('mobile-menu-overlay');
+    const menuIcon = document.getElementById('menu-icon');
+    let isMenuOpen = false;
+
+    menuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (isMenuOpen) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
+    });
+
+    function openMobileMenu() {
+      menu.classList.remove('-translate-x-full');
+      overlay.classList.remove('hidden');
+      menuIcon.innerHTML = '<line x1="18" y1="6" x2="6" y2="18" stroke-linecap="round" stroke-linejoin="round"></line> <line x1="6" y1="6" x2="18" y2="18" stroke-linecap="round" stroke-linejoin="round"></line>';
+      isMenuOpen = true;
+    }
+
+    function closeMobileMenu() {
+      menu.classList.add('-translate-x-full');
+      overlay.classList.add('hidden');
+      menuIcon.innerHTML = '<line x1="3" y1="6" x2="21" y2="6"></line> <line x1="3" y1="12" x2="21" y2="12"></line> <line x1="3" y1="18" x2="21" y2="18"></line>';
+      isMenuOpen = false;
+    }
+
+    overlay.addEventListener('click', closeMobileMenu);
+
+    // Element SDK
+    const defaultConfig = {
+      logo_header_color: "#1e90ff",
+      logo_header_bg_color: "#ffffff",
+      logo_height: "32",
+      logo_width: "auto",
+      logo_height_mobile: "28",
+      logo_width_mobile: "auto",
+      hero_title: "Gas Liquefaction Systems – Greenox Gases",
+      hero_subtitle: "Advanced Cryogenic Liquefiers for Industrial Gases | Teamwin & Yuanhan Partnership",
+      intro_title: "Liquefaction Technology Overview"
+    };
+
+    window.elementSdk.init({
+      defaultConfig,
+      onConfigChange: async (config) => {
+        const c = { ...defaultConfig, ...config };
+        
+        const logoImg = document.getElementById('logo-img');
+        if (logoImg) {
+          logoImg.style.filter = `hue-rotate(0deg)`;
+          logoImg.style.backgroundColor = c.logo_header_bg_color;
+          logoImg.style.color = c.logo_header_color;
+        }
+        
+        if (logoImg) {
+          logoImg.style.height = c.logo_height + (c.logo_height !== "auto" ? "px" : "");
+          logoImg.style.width = c.logo_width === "auto" ? "auto" : c.logo_width + "px";
+        }
+        
+        const isMobile = window.innerWidth < 1024;
+        if (isMobile) {
+          document.documentElement.style.setProperty('--logo-height-mobile', c.logo_height_mobile + (c.logo_height_mobile !== "auto" ? "px" : "auto"));
+          document.documentElement.style.setProperty('--logo-width-mobile', c.logo_width_mobile === "auto" ? "auto" : c.logo_width_mobile + "px");
+        }
+
+        // Update hero section
+        const heroTitle = document.getElementById('hero-title');
+        if (heroTitle) {
+          heroTitle.textContent = c.hero_title;
+        }
+
+        const heroSubtitle = document.getElementById('hero-subtitle');
+        if (heroSubtitle) {
+          heroSubtitle.textContent = c.hero_subtitle;
+        }
+      },
+      mapToCapabilities: (config) => {
+        const c = { ...defaultConfig, ...config };
+        return {
+          recolorables: [
+            { get: () => c.logo_header_color, set: (v) => { c.logo_header_color = v; window.elementSdk.setConfig({ logo_header_color: v }); } },
+            { get: () => c.logo_header_bg_color, set: (v) => { c.logo_header_bg_color = v; window.elementSdk.setConfig({ logo_header_bg_color: v }); } }
+          ],
+          borderables: [],
+          fontEditable: undefined,
+          fontSizeable: undefined
+        };
+      },
+      mapToEditPanelValues: (config) => {
+        const c = { ...defaultConfig, ...config };
+        return new Map([
+          ["logo_header_color", c.logo_header_color],
+          ["logo_header_bg_color", c.logo_header_bg_color],
+          ["logo_height", c.logo_height],
+          ["logo_width", c.logo_width],
+          ["logo_height_mobile", c.logo_height_mobile],
+          ["logo_width_mobile", c.logo_width_mobile],
+          ["hero_title", c.hero_title],
+          ["hero_subtitle", c.hero_subtitle],
+          ["intro_title", c.intro_title]
+        ]);
+      }
+    });
+
+    lucide.createIcons();
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a16c1c61011f3d2c',t:'MTc4MzMxNDcwOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html><!-- Footer -->
